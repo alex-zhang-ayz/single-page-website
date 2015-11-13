@@ -1,0 +1,65 @@
+
+h1.title{
+	float: left;
+	font-family: Calibri;	
+	text-align: left;
+	margin: 5%;
+}
+
+.section-title{
+	font-family: Calibri;
+	text-align: left;
+	margin: 3%;
+}
+
+.toggle{
+	display: none;
+}
+
+.right-float{
+	float: right;
+	margin: 1%;
+	text-align: center;
+}
+
+
+div{
+	margin: 3%;
+	display: block;
+}
+
+div.centered{
+	float: center;
+	text-align: center;
+}
+
+div.left-focused{
+	float: center;
+	text-align: left;
+}
+
+input.left-focused{
+	float: left;
+	margin: 1%;
+}
+
+button.mainscreen{
+	margin: 1%;
+	width: 10%;
+	height: 10%;
+}
+
+body{
+	float: center;
+	margin: 1%;
+}
+
+footer.centered{
+	padding: 0.5%;
+	border-style: solid;
+	border-width: 2px;
+	font-family: Calibri;
+	position: relative;
+	margin: 3%;
+	text-align: center;
+}

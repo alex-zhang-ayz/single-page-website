@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		<script src="client.js"></script>
+		
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<title>Assignment 4</title>
+    </head>
+	
+	<header id="header">
+		<div class="row" id="start-header">
+			<h1 class="title h-back">This Title Is Amazing</h1>
+		</div>
+		<div class="row" id="account-header">
+			<h1 class="title h-back">This Title Is Amazing</h1>
+			<div class="profile" id="profile-header">
+				<button type="button" class="btn right-float" id="logout">Logout</button>
+				<h3 class="right-float" id="header-display-name">Account Name</h3>
+				<img src="HeadProfile.png" class="img-rounded right-float" width="4%" height="4%" id="header-display-img">
+				
+			</div>
+			
+		</div>
+		<hr>
+	</header>
+	
+	<div class="container" id="content-container">
+		<div class="row" id="login-buttons">
+			<div class="centered">
+				<button type="button" class="btn" id="login-butt">Login</button>
+				<button type="button" class="btn" id="register-butt">Register</button>
+			</div>
+		</div>
+		<div class="row" id="login-entry">
+			<div class="alert alert-danger toggle" id="lgn-pass-err">
+				<strong>Error:</strong> Incorrect email or password.
+			</div>
+			<div class="alert alert-danger toggle" id="lgn-empty-err">
+				<strong>Error:</strong> Some fields are empty.
+			</div>
+			
+			<h2>Login</h2>
+			<label for="email-entry">Email:</label>
+			<input type="text" class="form-control" id="email-field-lgn"></input>
+			<label for="password-entry">Password:</label>
+			<input type="password" class="form-control" id="password-field-lgn"></input>
+			<br>
+			<button type="button" class="btn" id="login-butt-lgn">Login</button>
+		</div>
+		<div class="row" id="register-entry">
+			<div class="alert alert-danger toggle" id="rg-usertaken-err">
+				<strong>Error:</strong> This username is unavailable.
+			</div>
+			<div class="alert alert-danger toggle" id="rg-pass-err">
+				<strong>Error:</strong> Passwords do not match.
+			</div>
+			<div class="alert alert-danger toggle" id="rg-empty-err">
+				<strong>Error:</strong> Some fields are empty.
+			</div>
+			
+			<h2>Register</h2>
+			<label for="email-entry">Email:</label>
+			<input type="text" class="form-control" id="email-field-rg"></input>
+			<label for="password-entry">Password:</label>
+			<input type="password" class="form-control" id="password-field-rg"></input>
+			<label for="confirm-password-entry">Confirm Password:</label>
+			<input type="password" class="form-control" id="cfm-password-field-rg"></input>
+			<br>
+			<button type="button" class="btn" id="register-butt-rg">Register</button>
+		</div>
+		<div class="row" id="accounts-page">
+			<h2 id="accounts-welcome">Welcome -Name-</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>User Email</th>
+						<th>Display Name</th>
+					</tr>
+				</thead>
+				<tbody id="table-body">
+					<!----GET DATA FROM DATABASE---->
+				</tbody>
+			</table>
+		</div>
+		<div class="row" id="edit-profile-page">
+			<h2>Edit Profile</h2>
+			<div class="row" id="editpro-table">
+				<div class="alert alert-danger toggle" id="ed-empty-err">
+					<strong>Error:</strong> Both fields are empty.
+				</div>
+				
+				<div class="col-sm-4">
+					<img src="HeadProfile.png" class="img-rounded" width="32%" height="32%" id="ed-profile-pic">
+					<br>
+					<br>
+					<div class="alert alert-danger toggle" id="ed-pp-empty-err">
+						<strong>Error:</strong> Field is empty.
+					</div>
+					<label>Change Profile Picture:</label>
+					<input type="text" class="form-control" id="profile-pic-ed" placeholder="Enter Link here"></input>
+					<br>
+					<button type="button" class="btn" id="update-pp-ed">Update</button>
+				</div>
+				<div class="col-sm-6">
+					<div class="alert alert-danger toggle" id="ed-descr-err">
+						<strong>Error:</strong> Description is limited to 500 characters.
+					</div>
+					<label for="email-edit">Email:</label>
+					<input type="text" class="form-control" id="email-field-ed" placeholder="email@email.com" readonly></input>
+					<label for="display-name-ed">Display Name:</label>
+					<input type="text" class="form-control" id="display-name-ed"></input>
+					<label for="description">Description:</label>
+					<textarea class="form-control" rows="5" id="description-ed"></textarea>
+					<h6 id="char-count">Character count: 0</h6>
+					<br>
+					<button type="button" class="btn" id="update-ed">Update</button>
+				</div>
+			</div>
+			
+			<h2>Change Password</h2>
+			<div class="row" id="editpass-table">
+				
+				<div class="alert alert-danger toggle" id="ed-pass-empty-err">
+					<strong>Error:</strong> Some fields are empty.
+				</div>
+				
+				<div class="alert alert-danger toggle" id="ed-old-pass-err">
+					<strong>Error:</strong> Current password is incorrect.
+				</div>
+				
+				<div class="alert alert-danger toggle" id="ed-new-pass-err">
+					<strong>Error:</strong> Passwords do not match.
+				</div>
+				
+				<div class="col-sm-12">
+					<label for="oldpass">Old Password</label>
+					<input type="password" class="form-control" id="old-password-ed"></input>
+					<label for="newpass">New Password:</label>
+					<input type="password" class="form-control" id="new-password-ed"></input>
+					<label for="confirm-newpass">Confirm New Password:</label>
+					<input type="password" class="form-control" id="confirm-new-password-ed"></input>
+					<br>
+					<button type="button" class="btn" id="change-pass-ed">Change Password</button>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="view-profile-page">
+			<button type="button" class="btn btn-link right-float toggle" id="edit-button">Edit</button>
+			<h2 id="profile-title">Name's Profile</h2>
+			
+			<div class="row" id="editpro-table">
+				<div class="col-sm-4">
+					<img src="HeadProfile.png" class="img-rounded" width="32%" height="32%" id="user-pp">
+					<br>
+					<br>
+					<section class="toggle" id="adminOptions">
+						<button type="button" class="btn" id="admin-delete-user">Delete User</button>
+						<button type="button" class="btn toggle" id="super-admin-make-admin">Make Admin</button>
+						<button type="button" class="btn toggle" id="super-admin-del-admin">Revoke Admin</button>
+					</section>
+				
+				</div>
+				<div class="col-sm-6">
+					<label for="email-edit">Email:</label>
+					<h5 id="user-email">email@email.com</h5>
+					<label for="display-name-ed">Display Name:</label>
+					<h5 id="user-display-name">John Doe</h5>
+					<label for="description">Description:</label>
+					<h5 id="user-descr">.........</h5>
+					<section id="admin-section" class="toggle">
+						<label for="ip">IP Address:</label>
+						<h5 id="user-ip">..........</h5>
+						<label for="loc">User Location:</label>
+						<h5 id="user-latitude">Latitude: </h5>
+						<h5 id="user-longitude">Longitude: </h5>
+					</section>
+
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+	
+	<footer class="centered">
+		<p> - Alex Zhang - c3zhangb - CSC309 - </p>
+	</footer>
+	
+</html>
